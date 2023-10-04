@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/board.css}" rel="stylesheet" />
+    <title>Shawn board</title>
+</head>
+<body>
+<div class="container">
+    <div class="new-post-button-area">
+        <button class="new-post-button">
+            <img class="post-button-icon" src="/icons/ic_pencil.svg" alt="Post button icon">
+            <div class="spacer-horizontal" />
+            <div class="post-button-text">
+                글쓰기
+            </div>
+        </button>
+    </div>
+    <div class="spacer-vertical" />
+    <div class="post-list" th:each="post: ${posts}">
+        <div th:text="${post.title}" />
+        <div th:text="${post.body}" />
+    </div>
+</div>
+</body>
+</html>
